@@ -16,13 +16,7 @@ provider "aws" {
   secret_key = var.secret_key
 }
 
-# S3 Bucket
 
-provider "aws" {
-    region = var.region
-
-  
-}
 resource "aws_instance" "tags_linux" {
 
     ami = var.ami_id
