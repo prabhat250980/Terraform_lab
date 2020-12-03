@@ -18,7 +18,18 @@ provider "aws" {
 
 # S3 Bucket
 
-resource "aws_s3_bucket" "Test" {
-    bucket_prefix= "Test-"
+provider "aws" {
+    region = var.region
+
   
+}
+resource "aws_instance" "tags_linux" {
+
+    ami = var.ami_id
+    instance_type = var.instance_type
+    tags = {
+      "Name" = "Lvm"
+      "envrionment" = "Dev"
+      "Type" = "LAB"
+    }
 }
